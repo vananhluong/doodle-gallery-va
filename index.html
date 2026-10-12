@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Doodle Gallery</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header>
     <h1>Doodle Gallery</h1>
-    <p>Mal was. Häng es an die Wand.</p>‚
+    <p>Mal was. Häng es an die Wand.</p>
   </header>
 
   <section class="studio">
     <canvas id="canvas" width="400" height="300"></canvas>
 
     <div class="tools">
+      <button id="mode-brush" type="button" class="tool-btn active">Stift</button>
+      <button id="mode-eraser" type="button" class="tool-btn">Radierer</button>
       <label>Farbe
         <input type="color" id="color" value="#1a1a1a">
       </label>
@@ -36,8 +40,9 @@
 
   <main id="gallery" class="gallery"></main>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
 
 </body>
+
 </html>

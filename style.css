@@ -43,6 +43,11 @@ header p { opacity: 0.7; }
 
 .tools label { display: flex; align-items: center; gap: 0.4rem; }
 
+.tool-btn.active {
+  outline: 2px solid #fff;
+  filter: brightness(1.15);
+}
+
 form { display: grid; gap: 0.5rem; }
 
 input[type="text"] {
