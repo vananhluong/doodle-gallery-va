@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doodle Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Doodle Gallery</h1>
+    <p>Mal was. Häng es an die Wand.</p>‚
+  </header>
+
+  <section class="studio">
+    <canvas id="canvas" width="400" height="300"></canvas>
+
+    <div class="tools">
+      <label>Farbe
+        <input type="color" id="color" value="#1a1a1a">
+      </label>
+      <label>Dicke
+        <input type="range" id="size" min="1" max="20" value="3">
+      </label>
+      <button id="clear" type="button">Löschen</button>
+    </div>
+
+    <form id="form">
+      <input id="title" type="text" placeholder="Titel deines Meisterwerks" maxlength="60" required>
+      <input id="author" type="text" placeholder="Dein Name (optional)" maxlength="30">
+      <button type="submit" id="submit">An die Wand hängen</button>
+    </form>
+
+    <p id="status" role="status"></p>
+  </section>
+
+  <main id="gallery" class="gallery"></main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
