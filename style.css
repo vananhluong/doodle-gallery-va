@@ -4,7 +4,9 @@
   --gold: #b08d4f;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -14,41 +16,74 @@ body {
   color: var(--wall);
 }
 
-header { text-align: center; margin-bottom: 2rem; }
-header h1 { font-size: 2.5rem; margin: 0; }
-header p { opacity: 0.7; }
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+header p {
+  opacity: 0.7;
+}
 
 .studio {
-  max-width: 420px;
-  margin: 0 auto 3rem;
-  display: grid;
-  gap: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px auto;
+  padding: 0 16px;
+  max-width: 600px;
 }
 
 #canvas {
-  width: 100%;
-  background: #fff;
+  display: block;
+  margin: 0 auto 20px auto;
+  /* Erzeugt am unteren Rand der Arbeitsfläche einen Abstand von 20 Pixeln. */
+  box-shadow: 0 0 0 10px var(--gold), 0 8px 24px rgba(0, 0, 0, 0.5);
   border-radius: 4px;
-  box-shadow: 0 0 0 10px var(--gold), 0 8px 24px rgba(0,0,0,0.5);
-  cursor: crosshair;
-  touch-action: none;
 }
 
 .tools {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 1rem;
-  font-size: 0.85rem;
+  justify-content: center;
+  gap: 12px;
+  /* gap between buttons */
+  width: 100%;
+  max-width: 500px;
+  margin: 10px auto 24px auto;
+  /* separate canvas and form */
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  /* rahmen */
+  border-radius: 8px;
 }
 
-.tools label { display: flex; align-items: center; gap: 0.4rem; }
+.tools label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
 
 .tool-btn.active {
   outline: 2px solid #fff;
   filter: brightness(1.15);
 }
 
-form { display: grid; gap: 0.5rem; }
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 40px auto;
+}
 
 input[type="text"] {
   padding: 0.6rem;
@@ -69,9 +104,16 @@ button {
   cursor: pointer;
 }
 
-button:disabled { opacity: 0.5; cursor: wait; }
+button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
 
-#status { text-align: center; min-height: 1.4em; font-size: 0.9rem; }
+#status {
+  text-align: center;
+  min-height: 1.4em;
+  font-size: 0.9rem;
+}
 
 .gallery {
   display: grid;
@@ -89,10 +131,13 @@ button:disabled { opacity: 0.5; cursor: wait; }
   background: #fff;
   padding: 12px;
   border: 10px solid var(--gold);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
-.frame img { width: 100%; display: block; }
+.frame img {
+  width: 100%;
+  display: block;
+}
 
 .frame figcaption {
   margin-top: 0.6rem;
@@ -101,5 +146,11 @@ button:disabled { opacity: 0.5; cursor: wait; }
   gap: 0.2rem;
 }
 
-.frame figcaption strong { font-size: 0.95rem; }
-.frame figcaption span { font-size: 0.75rem; color: #777; }
+.frame figcaption strong {
+  font-size: 0.95rem;
+}
+
+.frame figcaption span {
+  font-size: 0.75rem;
+  color: #777;
+}
