@@ -3,6 +3,23 @@ const SUPABASE_KEY = 'sb_publishable_J2Lz3bMkAQC4_ihooZTRvw_MaN1hNeo';
 
 const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+// ----Füge eine Variable hinzu, um den aktuellen Modus zu verfolgen----
+let isEraser = false;
+
+const brushBtn = document.getElementById('mode-brush');
+const eraserBtn = document.getElementById('mode-eraser');
+
+brushBtn.addEventListener('click', () => {
+  isEraser = false;
+  brushBtn.classList.add('active');
+  eraserBtn.classList.remove('active');
+});
+
+eraserBtn.addEventListener('click', () => {
+  isEraser = true;
+  eraserBtn.classList.add('active');
+  brushBtn.classList.remove('active');
+});
 // --- Zeichenfläche ---
 
 const canvas = document.getElementById('canvas');
@@ -42,7 +59,11 @@ function continueStroke(event) {
   if (!drawing) return;
   event.preventDefault();
   const { x, y } = positionOf(event);
-  ctx.strokeStyle = colorInput.value;
+
+  // Wenn der Radiermodus aktiviert ist, 
+  // wird die weiße Hintergrundfarbe verwendet; 
+  // andernfalls wird die ausgewählte Farbe verwendet.
+  ctx.strokeStyle = isEraser ? '#ffffff' : colorInput.value;
   ctx.lineWidth = sizeInput.value;
   ctx.lineTo(x, y);
   ctx.stroke();
